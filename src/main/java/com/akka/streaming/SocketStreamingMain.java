@@ -31,6 +31,6 @@ public class SocketStreamingMain {
                 .forEach(port -> messageSender.tell(new MessageSenderActor.SendMessage(port, System.currentTimeMillis() + System.lineSeparator()), ActorRef.noSender())
         ));
         final ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
-        executor.scheduleAtFixedRate(runnable, 0, 3, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(runnable, 0, 50, TimeUnit.MILLISECONDS);
     }
 }
